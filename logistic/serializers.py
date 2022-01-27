@@ -48,7 +48,6 @@ class StockSerializer(serializers.ModelSerializer):
             for k, v in position.items():
                 if k != 'product':
                     values_for_update[k] = v
-            #values_for_update = {'quantity': position['quantity'], 'price': position['price']}
 
             pos, res = stock.positions.update_or_create(product=position['product'],
                                                         defaults=values_for_update)
